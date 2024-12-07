@@ -18,6 +18,11 @@ def s_login(req):
                     return redirect(shop_home)
     return render(req,'login.html')
 
+def s_logout(req):
+    logout(req)
+    req.session.flush()
+    return redirect(s_login)
+
 def register(req):
     return render(req,'register.html')
 
