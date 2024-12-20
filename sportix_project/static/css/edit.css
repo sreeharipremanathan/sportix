@@ -1,0 +1,12 @@
+body{
+    background-color: rgb(42, 180, 175);
+}
+.form{
+    width: 700px;
+    background-color: aliceblue;
+}
+input{
+    padding: 5px;
+    margin: 8px;
+    width: 100%;
+}
