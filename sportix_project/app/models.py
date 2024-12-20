@@ -9,8 +9,12 @@ class Product(models.Model):
     offer_price=models.IntegerField()
 
 
-# class Cart(models.Model):
-#     user=models.ForeignKey(User,on_delete=models.CASCADE)
-#     Product=models.ForeignKey(products,on_delete=models.CASCADE)
+class Cart(models.Model):
+    user=models.ForeignKey(User,on_delete=models.CASCADE)
+    Product=models.ForeignKey(Product,on_delete=models.CASCADE)
 
-# class buy(models.Model):
+class buy(models.Model):
+    user=models.ForeignKey(User,on_delete=models.CASCADE)
+    product=models.ForeignKey(Product,on_delete=models.CASCADE)
+    price=models.IntegerField()
+    date=models.DateField(auto_now_add=True)

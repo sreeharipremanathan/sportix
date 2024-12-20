@@ -103,7 +103,10 @@ def delete_pro(req,id):
     data.delete()
     return redirect(shop_home)
 
-
+def bookings(req):
+    bookings=buy.objects.all()[::-1][:3]
+    print(bookings)
+    return render(req,'admin/bookings.html',{'data':bookings})
 
 
 
@@ -118,3 +121,34 @@ def user_home(req):
 def view_pro(req,id):
     product=Product.objects.get(pk=id)
     return render(req,'user/view_pro.html',{'product':product})
+
+def add_to_cart(req,id):
+    product=Product.objects.get(pk=id)
+    user=User.objects.get(username=req.session['user'])
+    data=Cart.objects.create(user=user,Product=product)
+    data.save()
+    return redirect(cart_display)
+
+def cart_display(req):
+    log_user=User.objects.get(username=req.session['user'])
+    data=Cart.objects.filter(user=log_user)
+    return render(req,'user/cart_display.html',{"data":data})
+
+def delete_cart(req,id):
+    data=Cart.objects.get(pk=id)
+    data.delete()
+    return redirect(cart_display)
+
+def buy_pro(req,id):
+    product=Product.objects.get(pk=id)
+    user=User.objects.get(username=req.session['user'])
+    price=product.offer_price
+    data=buy.objects.create(user=user,product=product,price=price)
+    data.save()
+    return redirect(user_home)
+
+
+def view_bookings(req):
+    user=User.objects.get(username=req.session['user'])
+    data=buy.objects.filter(user=user)[::-1]
+    return render(req,'user/view_bookings.html',{'data':data})
