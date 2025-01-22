@@ -49,14 +49,14 @@
     padding-bottom: 20px;
     display: flex;
     /* overflow: hidden; */
-    overflow: auto;
+    /* overflow: auto; */
     height: 400px;
 }
 .card{
     border: none;
     padding: 20px;
 }
-.a{
+a{
     text-decoration: none;
 }
 img{

@@ -48,7 +48,7 @@
             <ul class="navbar-nav me-auto ">
               <li class="nav-item">
                   <a href="" class="nav-link">
-                      <img src="{% static 'image/icons8-user-24.png' %}" alt="" style="width: 25px;height: 25px;">
+                    <img src="{% static 'image/icons8-user-24.png' %}" alt="" style="width: 25px;height: 25px;">
                   </a>
               </li>
           </ul>
@@ -59,7 +59,7 @@
     <div class="main">
       <img src="{% static 'image/portugal x puma.jpg' %}" alt="" style="width: 100%;">
       <div class="cover">
-        <h2 class="cover_head">Portugak x Puma Kit</h2>
+        <h2 class="cover_head">Portugal x Puma Kit</h2>
         <a href="" class="btn btn-light"><B>BUY</B></a>
       </div>
     </div>
@@ -76,8 +76,8 @@
                     <img class="card-img-top" src="{{pro.image.url}}" alt="Card image" style="max-height: 400px; max-width: 350px; object-fit: cover;">
                     <div class="card-body">
                       <h4 class="card-title">{{pro.pro_name}}</h4>
-                      <p class="card-text">{{pro.price}}</p>
-                      <p class="card-text">{{pro.offer_price}}</p>
+                      <b><p class="card-text">₹ {{pro.offer_price}}</p></b>
+                      <strike><p class="card-text">₹ {{pro.price}}</p></strike>
                     </div>
                 </div>
               </a>

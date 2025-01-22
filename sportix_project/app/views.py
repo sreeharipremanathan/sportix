@@ -138,6 +138,13 @@ def cart_display(req):
     print(data)
     return render(req,'user/cart_display.html',{"data":data})
 
+# def qty_in(req,cid):
+#     data=Cart.objects.get(pk=cid)
+#     data.qty+=1
+#     data.price= data.qty*data.product.offer_price
+#     data.save()
+#     return redirect(cart_display)
+
 def delete_cart(req,id):
     data=Cart.objects.get(pk=id)
     data.delete()
