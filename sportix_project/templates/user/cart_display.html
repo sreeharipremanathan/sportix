@@ -66,12 +66,12 @@
                     </div>
                     <div class="cart-item-details ms-3">
                         <h4 class="product-name">Name :{{ i.Product.pro_name }}</h4>
-                        <p class="product-price">Price: ₹{{ i.Product.price }}</p>
+                        <p class="product-price">Offer Price: ₹{{ i.Product.offer_price }}</p>
                         <div class="quantity-controls d-flex align-items-center">
-                            <a href="../qty_dec/{{i.pk}}" class="btn btn-outline-secondary btn-sm me-2">-</a>
+                            <!-- <a href="../qty_dec/{{i.pk}}" class="btn btn-outline-secondary btn-sm me-2">-</a>
                             <span class="qty">Qty: {{ i.qty }}</span>
-                            <a href="../qty_in/{{i.pk}}" class="btn btn-outline-secondary btn-sm ms-2">+</a>
-                            <a href="../cart_pro_buy/{{i.pk}}" class="btn btn-info" style="margin-left: 20px;">Buy</a>
+                            <a href="../qty_in/{{i.pk}}" class="btn btn-outline-secondary btn-sm ms-2">+</a> -->
+                            <a href="buy_pro/{{i.product.pk}}" class="btn btn-info" style="margin-left: 20px;">Buy</a>
                             <a href="delete_cart/{{i.pk}}" class="btn btn-danger" style="margin-left: 20px;">delete</a>
                         </div>
                     </div>
@@ -84,20 +84,6 @@
         </div> -->
     </div>
 
-    <!-- <div class="container">
-        <div class="row">
-            {% for object in data %}
-            <div class="col-lg-12">
-                <img src="{{ cart_obj.product.img.url }}" alt="" style="width: 50%;height: 300px;">
-                <p>{{object.product.pro_name}}</p>
-                <p>{{object.product.price}}</p>
-
-                <a href="buy_pro/{{cart_obj.product.pk}}" class="btn btn-primary">buy</a>
-                <a href="delete_cart/{{cart_obj.pk}}" class="btn btn-primary">delete</a>
-            </div>
-            {% endfor %}
-        </div>
-    </div> -->
     <footer class="bg-dark text-light pt-5 mt-3" style="font-size: 15px;">
       <div class="container">
           <div class="row">

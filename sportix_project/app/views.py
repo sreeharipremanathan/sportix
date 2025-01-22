@@ -62,7 +62,7 @@ def register(req):
 def shop_home(req):
     if 'shop' in req.session:
         product=Product.objects.all()
-        print(product)
+        # print(product)
         return render(req,'admin/shop_home.html',{'product':product})
     else:
         return render(s_login)
@@ -77,6 +77,7 @@ def add_product(req):
         file=req.FILES['img']
         data=Product.objects.create(pro_name=name,image=file,price=price,offer_price=offer_price)
         data.save()
+        print(data)
     return render(req,'admin/add_product.html')
 
 
