@@ -68,3 +68,16 @@ footer a{
     color: white;
     text-decoration: none;
 }
+
+
+@media only screen and (max-width:768px) and (min-width:576px){
+    .cover h2{
+        font-size: 1vw;
+    }
+    .cover a{
+        font-size: 1vw;
+    }
+    .products{
+        display: block;
+    }
+}

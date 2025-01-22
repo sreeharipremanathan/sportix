@@ -73,19 +73,10 @@
               <li class="nav-item">
                 <a class="nav-link" href="logout">Logout</a>
               </li>  
-              <!-- <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Dropdown</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Link</a></li>
-                  <li><a class="dropdown-item" href="#">Another link</a></li>
-                  <li><a class="dropdown-item" href="#">A third link</a></li>
-                </ul>
-              </li> -->
             </ul>
           </div>
         </div>
       </nav>
-      <!-- cards -->
 
       <div class="container products">
         <div class="container">
@@ -96,10 +87,10 @@
                       <img class="card-img-top" src="{{pro.image.url}}" alt="Card image" style="max-height: 200px; max-width: 150px; object-fit: cover;">
                       <div class="card-body">
                         <h4 class="card-title">{{pro.pro_name}}</h4>
-                        <p class="card-text">{{pro.price}}</p>
-                        <p class="card-text">{{pro.offer_price}}</p>
+                        <p class="card-text">₹ {{pro.price}}</p>
+                        <p class="card-text">₹ {{pro.offer_price}}</p>
                         <a href="edit_pro/{{pro.pk}}" class="btn btn-primary">edit</a>
-                        <a href="delete_pro/{{pro.pk}}" class="btn btn-primary">delete</a>
+                        <a href="delete_pro/{{pro.pk}}" class="btn btn-danger">delete</a>
                       </div>
                     </div>
               </div>
