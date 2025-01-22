@@ -2,8 +2,10 @@ from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate,login,logout
 from .models import *
 import os
-
+from django.contrib.auth.models import User
 from django.contrib import messages
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 # Create your views here.
@@ -39,7 +41,7 @@ def register(req):
         name=req.POST['name']
         email=req.POST['email']
         password=req.POST['password']
-        # send_mail('eshop registration', 'eshop account created', settings.EMAIL_HOST_USER, [email])
+        send_mail('Accout Registration', 'Your Sportix account registration is successfull', settings.EMAIL_HOST_USER, [email])
         try:
             data=User.objects.create_user(first_name=name,username=email,email=email,password=password)
             data.save()
@@ -73,7 +75,7 @@ def add_product(req):
         price=req.POST['price']
         offer_price=req.POST=['offer_price']
         file=req.FILES['img']
-        data=Product.objects.create(pro_name=name,price=price,offer_price=offer_price)
+        data=Product.objects.create(pro_name=name,image=file,price=price,offer_price=offer_price)
         data.save()
     return render(req,'admin/add_product.html')
 
@@ -130,8 +132,9 @@ def add_to_cart(req,id):
     return redirect(cart_display)
 
 def cart_display(req):
-    log_user=User.objects.get(username=req.session['user'])
+    log_user=User.objects.get(username=req.session.get('user'))
     data=Cart.objects.filter(user=log_user)
+    print(data)
     return render(req,'user/cart_display.html',{"data":data})
 
 def delete_cart(req,id):
@@ -152,3 +155,7 @@ def view_bookings(req):
     user=User.objects.get(username=req.session['user'])
     data=buy.objects.filter(user=user)[::-1]
     return render(req,'user/view_bookings.html',{'data':data})
+
+
+def contact(req):
+    return render(req,'user/contact.html')

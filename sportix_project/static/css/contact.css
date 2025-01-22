@@ -1,0 +1,35 @@
+.navbar{
+    background-color: black;
+}
+.navbar-collapse a{
+    color: rgb(214, 210, 210);
+}
+.navbar-collapse a:hover{
+    color: white;
+}
+.dropdown a{
+    color: rgb(214, 210, 210);
+}
+.dropdown a:active{
+    color: rgb(214, 210, 210);
+}
+.dropdown-menu a{
+    color: black;
+}
+.dropdown-menu a:hover{
+    color: black;
+}
+.contact{
+    background-color: rgb(51, 50, 50);
+}
+.contact h2{
+    color: white;
+}
+.contact label{
+    color: white;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+}

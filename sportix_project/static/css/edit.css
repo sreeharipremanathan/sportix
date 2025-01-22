@@ -1,9 +1,9 @@
 body{
-    background-color: rgb(42, 180, 175);
+    background-color: white;
 }
 .form{
     width: 700px;
-    background-color: aliceblue;
+    background-color: rgb(199, 198, 198);
 }
 input{
     padding: 5px;

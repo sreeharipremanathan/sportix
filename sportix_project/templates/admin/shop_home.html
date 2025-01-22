@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -10,7 +11,7 @@
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Logo</a>
+          <a class="navbar-brand" href="#"><img src="{% static 'image/sportix.png' %}" alt="" class="logo" style="width: 80px;height: 50px;"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -25,20 +26,41 @@
               <li class="nav-item">
                 <a class="nav-link" href="logout">Logout</a>
               </li>  
-              <li class="nav-item dropdown">
+              <!-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Dropdown</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Link</a></li>
                   <li><a class="dropdown-item" href="#">Another link</a></li>
                   <li><a class="dropdown-item" href="#">A third link</a></li>
                 </ul>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>
       </nav>
       <!-- cards -->
-    <div class="container">
+
+      <div class="container products">
+        <div class="container">
+          <div class="row">
+              {% for pro in product %}
+              <div class="col-lg-3">
+                  <div class="card" style="width:300px">
+                      <img class="card-img-top" src="{{pro.image.url}}" alt="Card image" >
+                      <div class="card-body">
+                        <h4 class="card-title">{{pro.pro_name}}</h4>
+                        <p class="card-text">{{pro.price}}</p>
+                        <p class="card-text">{{pro.offer_price}}</p>
+                        <a href="edit_pro/{{pro.pk}}" class="btn btn-primary">edit</a>
+                        <a href="delete_pro/{{pro.pk}}" class="btn btn-primary">delete</a>
+                      </div>
+                    </div>
+              </div>
+              {% endfor %}
+          </div>
+      </div>
+      </div>
+    <!-- <div class="container">
         <div class="row">
             {% for pro in product %}
             <div class="col-lg-4">
@@ -55,6 +77,6 @@
             </div>
             {% endfor %}
         </div>
-    </div>
+    </div> -->
 </body>
 </html>
