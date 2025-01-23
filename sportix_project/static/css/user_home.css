@@ -49,8 +49,8 @@
     padding-bottom: 20px;
     display: flex;
     /* overflow: hidden; */
-    /* overflow: auto; */
-    height: 400px;
+    overflow: auto;
+    height: 900px;
 }
 .card{
     border: none;
