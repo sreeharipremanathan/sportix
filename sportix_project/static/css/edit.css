@@ -1,6 +1,9 @@
 body{
     background-color: white;
 }
+.navbar{
+    background-color: black;
+}
 .form{
     width: 700px;
     background-color: rgb(199, 198, 198);

@@ -25,6 +25,7 @@ urlpatterns=[
     path('delete_cart/<id>',views.delete_cart),
     path('buy_pro/<id>',views.buy_pro),
     path('view_bookings',views.view_bookings),
+    path('cancel_order/<id>',views.cancel_order),
     path('contact',views.contact)
 
 

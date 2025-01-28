@@ -111,6 +111,11 @@ def bookings(req):
     print(bookings)
     return render(req,'admin/bookings.html',{'data':bookings})
 
+def admin_cancel_order(req,id):
+    data =buy.objects.get(pk=id)
+    data.delete()
+    return redirect(bookings)
+
 
 
 
@@ -164,6 +169,10 @@ def view_bookings(req):
     data=buy.objects.filter(user=user)[::-1]
     return render(req,'user/view_bookings.html',{'data':data})
 
+def cancel_order(req,id):
+    data = buy.objects.get(pk=id)
+    data.delete()
+    return redirect(view_bookings)
 
 def contact(req):
     return render(req,'user/contact.html')

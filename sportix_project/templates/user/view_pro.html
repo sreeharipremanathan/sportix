@@ -83,23 +83,23 @@
           <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="../user_home">home</a>
+                <a class="nav-link" href="../user_home">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../view_bookings">view bookings</a>
+                <a class="nav-link" href="../view_bookings">View Bookings</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../cart_display">view cart</a>
+                <a class="nav-link" href="../cart_display">View Cart</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="logout">logout</a>
+                <a class="nav-link" href="logout">Logout</a>
               </li>  
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">more</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">filter</a></li>
-                  <li><a class="dropdown-item" href="#">help</a></li>
-                  <li><a class="dropdown-item" href="logout">logout</a></li>
+                  <li><a class="dropdown-item" href="#">Filter</a></li>
+                  <li><a class="dropdown-item" href="#">Contact</a></li>
+                  <li><a class="dropdown-item" href="logout">Logout</a></li>
                 </ul>
               </li>
               <ul class="navbar-nav me-auto">
@@ -119,13 +119,46 @@
         </div>
       </nav>
 
-      <div class="container mt-5 mb-3 pro">
-        <div class="row mt-6" style="margin-top: 30px;">
+      <div class="container mt-5 mb-5">
+        <div class="row align-items-center">
             <!-- Product Image -->
+            <div class="col-md-6 text-center mb-4">
+                <img src="{{ product.image.url }}" alt="Product Image" class="img-fluid rounded shadow" 
+                     style="max-height: 400px; max-width: 100%; object-fit: cover; border: 2px solid #c2c2c2;">
+            </div>
+            
+            <!-- Product Details -->
+            <div class="col-md-6">
+                <h2 class="fw-bold">{{ product.pro_name }}</h2>
+                <!-- <p class="text-muted">Category: {{ product.category }}</p> -->
+                
+                <!-- Price Section -->
+                <div class="d-flex align-items-center mb-3">
+                    <h3 class="text-success fw-bold me-3">₹ {{ product.offer_price }}</h3> 
+                    <strike class="text-danger fs-5">₹ {{ product.price }}</strike>
+                </div>
+                
+                <!-- Buttons -->
+                <div class="d-flex gap-3 mt-4">
+                    <a href="../add_to_cart/{{ product.pk }}" class="btn btn-primary btn-lg px-4">
+                        Add to Cart
+                    </a>
+                    <a href="../buy_pro/{{ product.pk }}" class="btn btn-success btn-lg px-4">
+                        Buy Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+      <!-- <div class="container mt-5 mb-3 pro">
+        <div class="row mt-6" style="margin-top: 30px;">
+    
             <div class="col-md-6">
                 <img src="{{product.image.url}}" alt="Product Image" class="img-fluid rounded" style="max-height: 400px; max-width: 350px; object-fit: cover;">
             </div>
-            <!-- Product Info -->
+            
             <div class="col-md-6">
                 <h2>{{product.pro_name}}</h2>
                 <p class="text-muted"></p>
@@ -136,7 +169,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <footer class="bg-dark text-light pt-5 mt-5" style="font-size: 15px;">
       <div class="container">
