@@ -38,11 +38,11 @@
                   <li><a class="dropdown-item" href="logout">Logout</a></li>
                 </ul>
               </li>
-              <ul class="navbar-nav me-auto">
+              <!-- <ul class="navbar-nav me-auto">
                   <form action="" class="d-flex">
                     <input type="text" name="" id="" class="form-contol me-1 srch" placeholder="search">
                   </form>
-                </ul>
+                </ul> -->
             </ul>
             <ul class="navbar-nav me-auto ">
               <li class="nav-item">
@@ -72,7 +72,7 @@
                         <p class="product-price text-danger fw-bold">Offer Price: ₹{{ i.Product.offer_price }}</p>
                         <div class="quantity-controls d-flex align-items-center mt-2">
                             <!-- Buy Button -->
-                            <a href="buy_pro/{{i.pk}}" class="btn btn-success me-3 px-4 py-2 fw-bold shadow">
+                            <a href="../buy_pro/{{i.pk}}" class="btn btn-success me-3 px-4 py-2 fw-bold shadow">
                                 Buy Now
                             </a>
                             <!-- Delete Button -->

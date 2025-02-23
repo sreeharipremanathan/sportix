@@ -157,7 +157,7 @@ def delete_cart(req,id):
 
 def buy_pro(req,id):
     product=Product.objects.get(pk=id)
-    user=User.objects.get(username=req.session['user'])
+    user=User.objects.get(username=req.session.get('user'))
     price=product.offer_price
     data=buy.objects.create(user=user,product=product,price=price)
     data.save()

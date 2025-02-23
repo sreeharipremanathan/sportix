@@ -7,6 +7,7 @@ class Product(models.Model):
     image=models.FileField()
     price=models.IntegerField()
     offer_price=models.IntegerField()
+    
 
 
 class Cart(models.Model):

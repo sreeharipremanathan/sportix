@@ -14,11 +14,11 @@ body {
 h2{
     color: black;
 }
-.cart-item {
+/* .cart-item {
     border: 2px solid #00ff6a;
-}
+} */
 .btn-success {
-    background-color: #00ff6a;
+    background-color: #019840;
     border: none;
     transition: 0.3s;
 }
